@@ -31,7 +31,7 @@ fn usun_wpis(id_wpisu: usize){
 }
 
 #[ic_cdk::update]
-fn edytuj_dane(id_wpisu: usize, nowy_wpis: String){
+fn edytuj_wpis(id_wpisu: usize, nowy_wpis: String){
     WPISY.with(|wpisy |{
         let mut binding = wpisy.borrow_mut();
         let wpis = binding.get_mut(id_wpisu);
