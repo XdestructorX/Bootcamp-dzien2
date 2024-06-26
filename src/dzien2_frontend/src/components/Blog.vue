@@ -1,9 +1,10 @@
 <template>
-
     <div>
+        <h2 class="text-blue-800">Wpisy na bloga:</h2>
         <button @click="pobierzWpisy">refresh</button>
-        <div class="center">test</div>
-        {{ wpisy }}
+        <div v-for="wpis in wpisy">
+            <p>{{ wpis }}</p>
+        </div>
         <input v-model="nowyBlog" type="text">
         <button @click="dodajWpisy">dodaj</button>
     </div>
@@ -27,6 +28,8 @@ export default {
             this.wpisy = await dzien2_backend.odczytaj_wpisy();
         }
     },
-
+    async mounted() {
+        this.pobierzWpisy()
+    },
 }
 </script>
