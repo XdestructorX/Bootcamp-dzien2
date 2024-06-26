@@ -1,7 +1,8 @@
 <template>
+
     <div>
         <button @click="pobierzWpisy">refresh</button>
-        siema blog!
+        <div class="center">test</div>
         {{ wpisy }}
         <input v-model="nowyBlog" type="text">
         <button @click="dodajWpisy">dodaj</button>
